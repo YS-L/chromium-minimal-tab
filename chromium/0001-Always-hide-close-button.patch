@@ -1,0 +1,32 @@
+From f6283382f6f92581bd52202f400841753c5418e0 Mon Sep 17 00:00:00 2001
+From: Yung Siang Liau <liauys@gmail.com>
+Date: Sun, 1 Nov 2015 14:18:20 +0800
+Subject: [PATCH] Always hide close button
+
+---
+ chrome/browser/ui/tabs/tab_utils.cc | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/chrome/browser/ui/tabs/tab_utils.cc b/chrome/browser/ui/tabs/tab_utils.cc
+index cd088c4..3129461 100644
+--- a/chrome/browser/ui/tabs/tab_utils.cc
++++ b/chrome/browser/ui/tabs/tab_utils.cc
+@@ -132,12 +132,15 @@ bool ShouldTabShowMediaIndicator(int capacity,
+ bool ShouldTabShowCloseButton(int capacity,
+                               bool is_pinned_tab,
+                               bool is_active_tab) {
++  return false;
++  /*
+   if (is_pinned_tab)
+     return false;
+   else if (is_active_tab)
+     return true;
+   else
+     return capacity >= 3;
++  */
+ }
+ 
+ TabMediaState GetTabMediaStateForContents(content::WebContents* contents) {
+-- 
+2.6.3
+

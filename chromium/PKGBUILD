@@ -30,14 +30,17 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/$pkgn
         chromium-fix-print-preview-on-en_GB-locale.patch
         0001-Add-FPDFAPIJPEG_-prefix-to-more-libjpeg-functions.patch
         0001-Use-kwalletd5-in-KDE-5-environments.patch
-        chromium-widevine.patch)
+        chromium-widevine.patch
+        0001-Always-hide-close-button.patch)
 sha256sums=('64535073330a3d37aad228d10a15cdcbb5b389e59d079d1a3b22d023b99a58e6'
             '8b01fb4efe58146279858a754d90b49e5a38c9a0b36a1f84cbb7d12f92b84c28'
             '028a748a5c275de9b8f776f97909f999a8583a4b77fd1cd600b4fc5c0c3e91e9'
             '6fff45aafa31fb35a032b4e2175a341e08f9d2a9b37c5cf080c318180f558378'
             'd114def156d60d5f4c9e42f2955ba19bdebe38037a330ef947af24ace25db39d'
             '5a4c852ee40c29a2317c3175452aafaf72ecc6d09f0e6d2106ae403ec419ec2d'
-            '379b746e187de28f80f5a7cd19edcfa31859656826f802a1ede054fcb6dfb221')
+            '379b746e187de28f80f5a7cd19edcfa31859656826f802a1ede054fcb6dfb221'
+            'dbacf06812caa48e34aeed1adaca04211cf9470b0cdb8959f9b6157affac7ef6'
+            )
 
 # Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
 # Note: These are for Arch Linux use ONLY. For your own distribution, please
@@ -81,6 +84,9 @@ prepare() {
   # (Version string doesn't seem to matter so let's go with "Pinkie Pie")
   sed "s/@WIDEVINE_VERSION@/Pinkie Pie/" ../chromium-widevine.patch |
     patch -Np1
+
+  # Remove close button on tab
+  patch -p1 -i ../0001-Always-hide-close-button.patch
 
   # Remove bundled ICU; its header files appear to get picked up instead of
   # the system ones, leading to errors during the final link stage.
