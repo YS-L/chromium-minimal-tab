@@ -11,6 +11,9 @@ merged into ``master`` from time to time.
 
 Current version: 47.0.2526.111
 
+## Screenshot
+![screenshot](http://ys-l.github.io/images/remove-close-buttons-after.png)
+
 ## Usage
 
 Build the package using the standard ``makepkg`` command:
