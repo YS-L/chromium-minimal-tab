@@ -3,6 +3,10 @@ chromium-minimal-tab
 
 Chromium without the close buttons on tabs, for ArchLinux.
 
+Screenshot:
+
+![screenshot](screenshot.png)
+
 The PKGBUILD is modified minimally from the official [chromium
 package](https://www.archlinux.org/packages/extra/x86_64/chromium/). The most
 recent version of the original PKGBUILD can be found on the branch
@@ -10,9 +14,6 @@ recent version of the original PKGBUILD can be found on the branch
 merged into ``master`` from time to time.
 
 Current version: 47.0.2526.111
-
-## Screenshot
-![screenshot](http://ys-l.github.io/images/remove-close-buttons-after.png)
 
 ## Usage
 
