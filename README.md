@@ -13,7 +13,7 @@ recent version of the original PKGBUILD can be found on the branch
 ``arch-official``. Changes in the package from Arch upstream will be manually
 merged into ``master`` from time to time.
 
-Current version: 49.0.2623.108
+Current version: 49.0.2623.110
 
 ## Usage
 
